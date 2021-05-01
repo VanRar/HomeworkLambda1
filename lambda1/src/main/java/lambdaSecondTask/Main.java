@@ -5,7 +5,6 @@ public class Main {
 
         Worker.OnTaskDoneListener listener = System.out::println;
         Worker.OnTaskErrorListener listenerError = System.out::println;
-        System.out.println();
 
         Worker worker = new Worker(listener, listenerError);
         worker.start();
