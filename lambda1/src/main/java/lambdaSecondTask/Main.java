@@ -1,11 +1,13 @@
 package lambdaSecondTask;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
 
         Worker.OnTaskDoneListener listener = System.out::println;
-        Worker worker = new Worker(listener);
-        worker.start();
+        Worker.OnTaskErrorListener listenerError = System.out::println;
+        System.out.println();
 
+        Worker worker = new Worker(listener, listenerError);
+        worker.start();
     }
 }
